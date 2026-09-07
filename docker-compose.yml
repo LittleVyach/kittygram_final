@@ -9,12 +9,14 @@ volumes:
 services:
   db:
     image: postgres:13
+    restart: always
     env_file: .env
     volumes:
       - pg_data:/var/lib/postgresql/data
 
   backend:
     build: ./backend/
+    restart: always
     env_file: .env
     volumes:
       - collected_static:/app/collected_static/
@@ -24,6 +26,7 @@ services:
 
   frontend:
     build: ./frontend/
+    restart: always
     env_file: .env
     command: cp -r /app/build/. /app/static/
     volumes:
@@ -31,6 +34,7 @@ services:
 
   gateway:
     build: ./nginx/
+    restart: always
     ports:
       - "9000:9000"
     volumes:
