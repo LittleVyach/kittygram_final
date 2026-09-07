@@ -2,6 +2,9 @@
 
 ## Что нужно сделать
 
+[![Main Kittygram workflow](https://github.com/LittleVyach/kittygram_final/actions/workflows/main.yml/badge.svg)](https://github.com/LittleVyach/kittygram_final/actions/workflows/main.yml)
+[![Main Taski workflow](https://github.com/LittleVyach/taski-docker/actions/workflows/main.yml/badge.svg)](https://github.com/LittleVyach/taski-docker/actions/workflows/main.yml)
+
 Настроить запуск проекта Kittygram в контейнерах и CI/CD с помощью GitHub Actions
 
 ## Как проверить работу с помощью автотестов
