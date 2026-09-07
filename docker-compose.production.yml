@@ -23,7 +23,6 @@ services:
 
   frontend:
     image: snowcat1/kittygram_frontend:latest
-    restart: always
     env_file: .env
     command: cp -r /app/build/. /static/
     volumes:
