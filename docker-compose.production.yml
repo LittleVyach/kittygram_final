@@ -1,9 +1,6 @@
-version: '3'
-
 volumes:
   pg_data:
-  collected_static:
-  static_frontend:
+  static:
   media:
 
 services:
@@ -14,28 +11,28 @@ services:
       - pg_data:/var/lib/postgresql/data
 
   backend:
-    build: ./backend/
+    image: snowcat1/kittygram_backend:latest
     env_file: .env
     volumes:
-      - collected_static:/app/collected_static/
+      - static:/app/collected_static/
       - media:/app/media/
     depends_on:
       - db
 
   frontend:
-    build: ./frontend/
+    image: snowcat1/kittygram_frontend:latest
     env_file: .env
-    command: cp -r /app/build/. /app/static/
+    command: cp -r /app/build/. /static/
     volumes:
-      - static_frontend:/app/static/
+      - static:/static
 
   gateway:
-    build: ./nginx/
+    image: snowcat1/kittygram_gateway:latest
+    restart: always
     ports:
       - "9000:9000"
     volumes:
-      - static_frontend:/app/static/
-      - collected_static:/app/collected_static/
+      - static:/app/static/
       - media:/app/media/
     depends_on:
       - backend
