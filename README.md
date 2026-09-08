@@ -35,21 +35,21 @@ pip install -r backend/requirements.txt
 pytest
 ```
 # Примеры
-Получить список задач текущего пользователя:
+Получить список всех котиков:
 ```
 HTTP
-GET /api/tasks/
-Authorization: Bearer <ваш_токен>
+GET /api/cats/
 ```
-Создать новую задачу:
+Добавить нового питомца:
 ```
 HTTP
-POST /api/tasks/
-Authorization: Bearer <ваш_токен>
+POST /api/cats/
 Content-Type: application/json
 
 {
-  "name": "Купить корм для кота",
-  "description": "Взять премиум-класс с лососем",
-  "is_completed": false
+  "name": "Барсик",
+  "color": "Purple",
+  "birth_year": 2020,
+  "achievements": [1, 3]
+}
 ```
