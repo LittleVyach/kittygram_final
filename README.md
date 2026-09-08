@@ -9,7 +9,7 @@ Kittygram — это современная социальная платфор�
 
 1. Клонируйте репозиторий и перейдите в него:
 ```
-git clone https://github.com/Littlevyach/kittygram_final.git
+git clone https://github.com/LittleVyach/kittygram_final.git
 cd kittygram
 ```
 2. Создайте файл .env в корне проекта со следующими переменными окружения:
